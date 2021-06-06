@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Hello</h1>
+<div id="result"></div>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const xhr = new XMLHttpRequest();
+
+
+        xhr.open('GET', 'http://localhost:8080/cors');
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onload = function () {
+            console.log(xhr.responseText);
+        };
+
+        xhr.send();
+    });
+</script>
+</html>
